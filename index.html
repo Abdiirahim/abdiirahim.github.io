@@ -4,143 +4,216 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abdirahim Ahmed</title>
+
+  <!-- Optional: Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-38Jj2fuj6J13yRzshIYnzJeEvQ9N9+FGt5RQGShqKvuN/CbeZUXyK7EGNEf1y9z0mPh2UMZkz62Vb4r1ZfsA2w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <style>
-    /* Basic reset and fonts */
+    /* ------------------------------
+       BASIC PAGE & HERO STYLES
+    ------------------------------ */
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       color: #333;
     }
-
-    /* Hero / Welcome Section */
+    /* Full-screen hero section */
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 80vh; /* Full viewport height for a bold look */
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Subtle gradient background */
+      height: 100vh; /* Full viewport height */
       text-align: center;
-      padding: 2em;
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      padding: 2rem;
     }
     .hero h1 {
       font-size: 3rem;
-      margin: 0.2em 0;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 1.5em;
+      margin-bottom: 2rem;
     }
 
-    /* Navigation Bar inside the hero */
-    nav {
+    /* ------------------------------
+       NAVIGATION ICONS
+    ------------------------------ */
+    .nav-icons {
       display: flex;
-      gap: 1em;
+      gap: 2rem;
     }
-    nav a {
+    .nav-icons .icon-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
       text-decoration: none;
       color: #333;
-      background-color: #fff;
-      padding: 0.5em 1em;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: background-color 0.2s ease;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      width: 4rem;
+      text-align: center;
     }
-    nav a:hover {
-      background-color: #eee;
+    .nav-icons .icon-btn:hover {
+      background-color: #fff;
+    }
+    .nav-icons .icon-btn i {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .nav-icons .icon-btn span {
+      font-size: 0.9rem;
+      font-weight: bold;
     }
 
-    /* Section Styling */
-    section {
-      padding: 2em;
+    /* ------------------------------
+       SECTION CONTENT
+    ------------------------------ */
+    .section-content {
+      display: none; /* Hidden by default, shown via JS */
+      padding: 2rem;
       max-width: 800px;
       margin: 0 auto;
     }
-    h2 {
-      margin-top: 0;
+    .section-content h2 {
+      margin-bottom: 1rem;
+    }
+    .section-content p,
+    .section-content li {
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .section-content ul {
+      list-style-type: disc;
+      margin-left: 2rem;
     }
 
-    /* Footer */
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
     footer {
       text-align: center;
-      padding: 2em;
+      padding: 2rem;
       background-color: #f9f9f9;
+      margin-top: 3rem;
     }
   </style>
+
+  <script>
+    // JavaScript function to show a section and hide others
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.section-content');
+      sections.forEach(sec => {
+        sec.style.display = 'none';
+      });
+      // Show the chosen section
+      document.getElementById(sectionId).style.display = 'block';
+      // Scroll to the top of the page (optional)
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </head>
 <body>
 
-  <!-- Hero / Welcome Section -->
+  <!-- HERO SECTION -->
   <div class="hero">
-    <h1>Abdirahim Ahmed</h1>
+    <h1>ABDIRAHIM AHMED</h1>
     <p>Welcome to my page</p>
-    <!-- Navigation with anchor links -->
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#experience">Professional Experience</a>
-      <a href="#skills">Skills & Tools</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+    <!-- ICON-BASED NAVIGATION -->
+    <div class="nav-icons">
+      <div class="icon-btn" onclick="showSection('about')">
+        <i class="fas fa-user"></i>
+        <span>About</span>
+      </div>
+      <div class="icon-btn" onclick="showSection('experience')">
+        <i class="fas fa-briefcase"></i>
+        <span>Experience</span>
+      </div>
+      <div class="icon-btn" onclick="showSection('skills')">
+        <i class="fas fa-cogs"></i>
+        <span>Skills</span>
+      </div>
+      <div class="icon-btn" onclick="showSection('projects')">
+        <i class="fas fa-lightbulb"></i>
+        <span>Projects</span>
+      </div>
+      <div class="icon-btn" onclick="showSection('contact')">
+        <i class="fas fa-envelope"></i>
+        <span>Contact</span>
+      </div>
+    </div>
   </div>
 
-  <!-- About Me Section -->
-  <section id="about">
+  <!-- ABOUT SECTION -->
+  <div id="about" class="section-content">
     <h2>About Me</h2>
-    <p>
-      Hello, I’m <strong>Abdirahim Ahmed</strong>—a passionate Computer Engineering student 
+    <p>Hello, I’m <strong>Abdirahim Ahmed</strong>—a passionate Computer Engineering student 
       at the <a href="https://www.charlotte.edu" target="_blank">University of North Carolina at Charlotte</a>, 
-      graduating in May 2025. I’m excited by the intersection of technology and engineering 
-      and how innovative solutions can address real-world challenges.
-    </p>
-    <p>
-      My journey began with earning two associate degrees in Engineering and Science at 
-      Wake Technical Community College, laying a strong foundation for my technical expertise. 
-      When I’m not immersed in coursework or lab projects, I enjoy exploring emerging tech trends, 
-      experimenting with new programming languages, and engaging with local tech communities.
-    </p>
-  </section>
+      expecting to graduate in May 2025. I’m excited by the intersection of technology and engineering 
+      and how innovative solutions can address real-world challenges.</p>
+    <p>My journey began with earning two associate degrees in Engineering and Science at 
+      Wake Technical Community College, which laid a strong foundation for my technical expertise. 
+      Beyond my coursework and lab projects, I enjoy exploring emerging tech trends, 
+      experimenting with new programming languages, and engaging with local tech communities.</p>
+  </div>
 
-  <!-- Professional Experience Section -->
-  <section id="experience">
+  <!-- EXPERIENCE SECTION -->
+  <div id="experience" class="section-content">
     <h2>Professional Experience & Achievements</h2>
-    <p>
-      <strong>Business Development Intern at USWYRE (May 2024 – August 2024)</strong><br>
+    <p><strong>Business Development Intern at USWYRE (May 2024 – August 2024)</strong><br>
       • Promoted money transfer services at community events and guided users through app navigation.<br>
-      • Gathered user feedback, contributing to service expansion.
-    </p>
-    <p>
-      <strong>Support Technician at Dave & Busters (May 2022 – July 2022)</strong><br>
+      • Gathered user feedback, contributing to service expansion.</p>
+    <p><strong>Support Technician at Dave & Busters (May 2022 – July 2022)</strong><br>
       • Combined technical troubleshooting with customer service.<br>
-      • Maintained a high first-time resolution rate, boosting satisfaction.
-    </p>
-  </section>
+      • Maintained a high first-time resolution rate, boosting satisfaction.</p>
+  </div>
 
-  <!-- Skills & Tools Section -->
-  <section id="skills">
+  <!-- SKILLS SECTION -->
+  <div id="skills" class="section-content">
     <h2>Skills & Tools</h2>
     <ul>
       <li>Programming Languages: Python, C, C++</li>
       <li>Design & Simulation Tools: Cadence, Altium, Vivado, Matlab</li>
       <li>Embedded Systems, PCB Design, Circuit Design, System Wiring</li>
-      <li>SystemVerilog, VHDL, and Machine Learning frameworks</li>
+      <li>SystemVerilog, VHDL, Machine Learning frameworks</li>
     </ul>
-  </section>
+  </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
+  <!-- PROJECTS SECTION -->
+  <div id="projects" class="section-content">
+    <h2>Projects</h2>
+    <p><strong>CSW_TENSION (August 2024 – Present, UNC Charlotte)</strong><br>
+      • Collaborating with engineering seniors to diagnose and fix a Graphtec machine failure for Carolina Signs and Wonders.<br>
+      • Programming a microcontroller to prevent future failures and designing a custom PCB for stepper motor control.</p>
+    <p><strong>Game Controller Development (May 2024 – August 2024, UNC Charlotte)</strong><br>
+      • Built a game controller using MSP-EXP430G2ET to interface with a Python-based game via UART.<br>
+      • Configured ADC inputs and implemented UART protocols for responsive gameplay.</p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div id="contact" class="section-content">
     <h2>Contact</h2>
-    <p>
-      I’d love to connect and explore new opportunities or collaborations.
-    </p>
-    <p>
-      Email: <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
-      Phone: (984) 269-8573
-    </p>
-  </section>
+    <p>I’d love to connect and explore new opportunities or collaborations.</p>
+    <p>Email: <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
+       Phone: (984) 269-8573</p>
+  </div>
 
   <footer>
     <p>© 2025 Abdirahim Ahmed</p>
