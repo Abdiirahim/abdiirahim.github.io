@@ -23,12 +23,12 @@
     }
     body {
       font-family: Arial, sans-serif;
-      color: #fff; /* White text for the dark hero */
-      background-color: #000; /* Fallback background */
-      overflow-x: hidden; /* Prevent horizontal scroll if anything goes wide */
+      background-color: #000; /* Black background */
+      color: #fff; /* White text for hero */
+      overflow-x: hidden;
     }
 
-    /* HERO SECTION (DARK BACKGROUND) */
+    /* HERO SECTION (HOME) */
     .hero {
       display: flex;
       flex-direction: column;
@@ -36,7 +36,7 @@
       justify-content: center;
       height: 100vh; /* Full viewport height */
       text-align: center;
-      background-color: #000; /* Solid black background */
+      background-color: #000;
       padding: 2rem;
     }
     .hero h1 {
@@ -48,32 +48,31 @@
     .hero p {
       font-size: 1.3rem;
       margin-bottom: 2rem;
-      color: #ccc; /* Slightly lighter gray for contrast */
+      color: #ccc; /* Slightly lighter gray */
     }
 
     /* ICON NAVIGATION BAR */
     .nav-icons {
       display: flex;
       gap: 2rem;
-      flex-wrap: wrap; /* Allows wrapping on smaller screens */
+      flex-wrap: wrap;
       justify-content: center;
     }
     .icon-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       cursor: pointer;
       text-decoration: none;
       color: #fff;
-      background-color: #333; /* Dark gray button background */
+      background-color: #333;
       padding: 1rem 1.5rem;
       border-radius: 8px;
       transition: background-color 0.3s ease;
       text-align: center;
     }
     .icon-btn:hover {
-      background-color: #555; /* Slightly lighter on hover */
+      background-color: #555;
     }
     .icon-btn i {
       font-size: 1.5rem;
@@ -82,14 +81,15 @@
     .icon-btn span {
       font-size: 0.95rem;
       font-weight: bold;
-      white-space: nowrap; /* Prevents text from wrapping to next line */
+      white-space: nowrap;
     }
 
-    /* SECTIONS (WHITE BACKGROUND, BLACK TEXT) */
+    /* SECTION CONTENT (REPLACES HERO WHEN VISIBLE) */
     .section-content {
       display: none; /* Hidden by default, shown via JS */
       background-color: #fff;
       color: #000;
+      min-height: 100vh; /* Fill the viewport height */
       padding: 2rem;
       max-width: 800px;
       margin: 0 auto;
@@ -111,32 +111,60 @@
       text-decoration: underline;
     }
 
+    /* BACK TO HOME BUTTON */
+    .back-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    .back-btn:hover {
+      background-color: #555;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #111; /* Darker background for footer */
-      color: #ccc; /* Light gray text */
+      background-color: #111;
+      color: #ccc;
     }
   </style>
 
   <script>
+    // Hide hero, show one section
     function showSection(sectionId) {
+      // Hide hero
+      document.querySelector('.hero').style.display = 'none';
       // Hide all sections
       const sections = document.querySelectorAll('.section-content');
-      sections.forEach(section => {
-        section.style.display = 'none';
-      });
+      sections.forEach(section => section.style.display = 'none');
       // Show the clicked section
       document.getElementById(sectionId).style.display = 'block';
-      // Scroll to top (so the revealed section is visible immediately)
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show hero, hide all sections
+    function showHome() {
+      // Hide all sections
+      const sections = document.querySelectorAll('.section-content');
+      sections.forEach(section => section.style.display = 'none');
+      // Show hero
+      document.querySelector('.hero').style.display = 'flex';
+      // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION (HOME) -->
   <div class="hero">
     <h1>ABDIRAHIM AHMED</h1>
     <p>Welcome to my page</p>
@@ -179,9 +207,10 @@
       My academic journey began at Wake Technical Community College, where I earned 
       two associate degrees in Engineering and Science. Beyond coursework, I love diving 
       into emerging tech trends, collaborating on open-source projects, and contributing 
-      to local tech communities. In my free time, I also enjoy reading about AI advancements 
+      to local tech communities. In my free time, I enjoy reading about AI advancements 
       and experimenting with new programming languages to keep my skills sharp.
     </p>
+    <a class="back-btn" onclick="showHome()">Back to Home</a>
   </div>
 
   <!-- EXPERIENCE SECTION -->
@@ -201,6 +230,7 @@
       significantly reduced downtime. This hands-on experience sharpened my problem-solving 
       skills and emphasized the importance of communication and adaptability.
     </p>
+    <a class="back-btn" onclick="showHome()">Back to Home</a>
   </div>
 
   <!-- SKILLS SECTION -->
@@ -220,6 +250,7 @@
       These skills allow me to contribute effectively to cross-disciplinary teams, whether it’s 
       designing a PCB, writing firmware, or analyzing data for insights.
     </p>
+    <a class="back-btn" onclick="showHome()">Back to Home</a>
   </div>
 
   <!-- PROJECTS SECTION -->
@@ -241,6 +272,7 @@
       This hands-on experience honed my ability to debug embedded systems and optimize data 
       transfer between hardware and software.
     </p>
+    <a class="back-btn" onclick="showHome()">Back to Home</a>
   </div>
 
   <!-- CONTACT SECTION -->
@@ -258,11 +290,12 @@
       Let’s work together to push the boundaries of innovation and create solutions that 
       truly make a difference.
     </p>
+    <a class="back-btn" onclick="showHome()">Back to Home</a>
   </div>
 
   <footer>
     <p>© 2025 Abdirahim Ahmed</p>
   </footer>
-
 </body>
 </html>
+
