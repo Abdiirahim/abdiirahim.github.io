@@ -24,7 +24,7 @@
     body {
       font-family: Arial, sans-serif;
       color: #fff; /* White text for the dark hero */
-      background-color: #000; /* Fallback background for body if needed */
+      background-color: #000; /* Fallback background */
       overflow-x: hidden; /* Prevent horizontal scroll if anything goes wide */
     }
 
@@ -55,6 +55,8 @@
     .nav-icons {
       display: flex;
       gap: 2rem;
+      flex-wrap: wrap; /* Allows wrapping on smaller screens */
+      justify-content: center;
     }
     .icon-btn {
       display: flex;
@@ -65,10 +67,9 @@
       text-decoration: none;
       color: #fff;
       background-color: #333; /* Dark gray button background */
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       border-radius: 8px;
       transition: background-color 0.3s ease;
-      width: 4rem;
       text-align: center;
     }
     .icon-btn:hover {
@@ -79,8 +80,9 @@
       margin-bottom: 0.3rem;
     }
     .icon-btn span {
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       font-weight: bold;
+      white-space: nowrap; /* Prevents text from wrapping to next line */
     }
 
     /* SECTIONS (WHITE BACKGROUND, BLACK TEXT) */
@@ -127,7 +129,7 @@
       });
       // Show the clicked section
       document.getElementById(sectionId).style.display = 'block';
-      // Scroll to top (so section is visible immediately)
+      // Scroll to top (so the revealed section is visible immediately)
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
@@ -167,56 +169,94 @@
   <!-- ABOUT SECTION -->
   <div id="about" class="section-content">
     <h2>About Me</h2>
-    <p>Hello, I’m <strong>Abdirahim Ahmed</strong>—a passionate Computer Engineering student 
-      at the <a href="https://www.charlotte.edu" target="_blank">University of North Carolina at Charlotte</a>, 
-      expecting to graduate in May 2025. I’m excited by the intersection of technology and engineering 
-      and how innovative solutions can address real-world challenges.</p>
-    <p>My journey began with earning two associate degrees in Engineering and Science at 
-      Wake Technical Community College, which laid a strong foundation for my technical expertise. 
-      Beyond my coursework and lab projects, I enjoy exploring emerging tech trends, 
-      experimenting with new programming languages, and engaging with local tech communities.</p>
+    <p>
+      Hello, I’m <strong>Abdirahim Ahmed</strong>—a dedicated Computer Engineering student at the 
+      <a href="https://www.charlotte.edu" target="_blank">University of North Carolina at Charlotte</a>, 
+      with an expected graduation date of May 2025. My passion lies in bridging hardware and software 
+      to develop innovative solutions for real-world problems.
+    </p>
+    <p>
+      My academic journey began at Wake Technical Community College, where I earned 
+      two associate degrees in Engineering and Science. Beyond coursework, I love diving 
+      into emerging tech trends, collaborating on open-source projects, and contributing 
+      to local tech communities. In my free time, I also enjoy reading about AI advancements 
+      and experimenting with new programming languages to keep my skills sharp.
+    </p>
   </div>
 
   <!-- EXPERIENCE SECTION -->
   <div id="experience" class="section-content">
     <h2>Professional Experience & Achievements</h2>
-    <p><strong>Business Development Intern at USWYRE (May 2024 – August 2024)</strong><br>
-      • Promoted money transfer services at community events and guided users through app navigation.<br>
-      • Gathered user feedback, contributing to service expansion.</p>
-    <p><strong>Support Technician at Dave & Busters (May 2022 – July 2022)</strong><br>
-      • Combined technical troubleshooting with customer service.<br>
-      • Maintained a high first-time resolution rate, boosting satisfaction.</p>
+    <p>
+      <strong>Business Development Intern, USWYRE (May 2024 – August 2024)</strong><br>
+      In this role, I engaged with community members to highlight USWYRE’s money transfer services, 
+      assisting users with app navigation and promoting the benefits of instant overseas transactions. 
+      By gathering direct customer feedback, I helped guide service improvements and expansion efforts 
+      into new states.
+    </p>
+    <p>
+      <strong>Support Technician, Dave & Busters (May 2022 – July 2022)</strong><br>
+      My focus was on technical troubleshooting and customer satisfaction. I resolved hardware 
+      issues on various gaming systems, often achieving a high first-time resolution rate, which 
+      significantly reduced downtime. This hands-on experience sharpened my problem-solving 
+      skills and emphasized the importance of communication and adaptability.
+    </p>
   </div>
 
   <!-- SKILLS SECTION -->
   <div id="skills" class="section-content">
     <h2>Skills & Tools</h2>
+    <p>
+      I’ve honed a diverse technical skill set through both formal education and personal 
+      experimentation. My core competencies include:
+    </p>
     <ul>
-      <li>Programming Languages: Python, C, C++</li>
-      <li>Design & Simulation Tools: Cadence, Altium, Vivado, Matlab</li>
-      <li>Embedded Systems, PCB Design, Circuit Design, System Wiring</li>
-      <li>SystemVerilog, VHDL, Machine Learning frameworks</li>
+      <li><strong>Programming Languages:</strong> Python, C, C++</li>
+      <li><strong>Design & Simulation Tools:</strong> Cadence, Altium, Vivado, Matlab</li>
+      <li><strong>Hardware Expertise:</strong> Embedded systems, PCB design, circuit design, system wiring</li>
+      <li><strong>HDLs & ML:</strong> SystemVerilog, VHDL, and machine learning frameworks</li>
     </ul>
+    <p>
+      These skills allow me to contribute effectively to cross-disciplinary teams, whether it’s 
+      designing a PCB, writing firmware, or analyzing data for insights.
+    </p>
   </div>
 
   <!-- PROJECTS SECTION -->
   <div id="projects" class="section-content">
     <h2>Projects</h2>
-    <p><strong>CSW_TENSION (August 2024 – Present, UNC Charlotte)</strong><br>
-      • Collaborating with engineering seniors to diagnose and fix a Graphtec machine failure for Carolina Signs and Wonders.<br>
-      • Programming a microcontroller to prevent future failures and designing a custom PCB for stepper motor control.</p>
-    <p><strong>Game Controller Development (May 2024 – August 2024, UNC Charlotte)</strong><br>
-      • Built a game controller using MSP-EXP430G2ET to interface with a Python-based game via UART.<br>
-      • Configured ADC inputs and implemented UART protocols for responsive gameplay.</p>
+    <p>
+      <strong>CSW_TENSION (August 2024 – Present, UNC Charlotte)</strong><br>
+      Collaborating with senior engineering students, I’m part of a team tasked with diagnosing 
+      and resolving a Graphtec machine failure for Carolina Signs and Wonders. My responsibilities 
+      include programming a microcontroller to prevent future breakdowns and designing a custom 
+      PCB to control stepper motors with precision. This project challenges me to combine 
+      hardware design, software development, and thorough testing to ensure long-term reliability.
+    </p>
+    <p>
+      <strong>Game Controller Development (May 2024 – August 2024, UNC Charlotte)</strong><br>
+      I spearheaded a project to create a custom game controller using the MSP-EXP430G2ET 
+      microcontroller. By interfacing with a Python-based game via UART, I integrated ADC inputs 
+      for analog control and implemented robust UART communication protocols for smooth gameplay. 
+      This hands-on experience honed my ability to debug embedded systems and optimize data 
+      transfer between hardware and software.
+    </p>
   </div>
 
   <!-- CONTACT SECTION -->
   <div id="contact" class="section-content">
     <h2>Contact</h2>
-    <p>I’d love to connect and explore new opportunities or collaborations.</p>
     <p>
-      Email: <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
-      Phone: (984) 269-8573
+      I’m always open to discussing new opportunities, collaborations, or industry insights. 
+      Whether you have a project in mind or just want to connect, feel free to reach out:
+    </p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
+      <strong>Phone:</strong> (984) 269-8573
+    </p>
+    <p>
+      Let’s work together to push the boundaries of innovation and create solutions that 
+      truly make a difference.
     </p>
   </div>
 
