@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abdirahim Ahmed</title>
 
-  <!-- Optional: Font Awesome for icons -->
+  <!-- Font Awesome for Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -15,9 +15,7 @@
   />
 
   <style>
-    /* ------------------------------
-       BASIC PAGE & HERO STYLES
-    ------------------------------ */
+    /* RESET & GLOBAL STYLES */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -25,9 +23,12 @@
     }
     body {
       font-family: Arial, sans-serif;
-      color: #333;
+      color: #fff; /* White text for the dark hero */
+      background-color: #000; /* Fallback background for body if needed */
+      overflow-x: hidden; /* Prevent horizontal scroll if anything goes wide */
     }
-    /* Full-screen hero section */
+
+    /* HERO SECTION (DARK BACKGROUND) */
     .hero {
       display: flex;
       flex-direction: column;
@@ -35,57 +36,58 @@
       justify-content: center;
       height: 100vh; /* Full viewport height */
       text-align: center;
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+      background-color: #000; /* Solid black background */
       padding: 2rem;
     }
     .hero h1 {
-      font-size: 3rem;
+      font-size: 4rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
+      color: #fff;
     }
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 2rem;
+      color: #ccc; /* Slightly lighter gray for contrast */
     }
 
-    /* ------------------------------
-       NAVIGATION ICONS
-    ------------------------------ */
+    /* ICON NAVIGATION BAR */
     .nav-icons {
       display: flex;
       gap: 2rem;
     }
-    .nav-icons .icon-btn {
+    .icon-btn {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       cursor: pointer;
       text-decoration: none;
-      color: #333;
-      background-color: rgba(255, 255, 255, 0.8);
+      color: #fff;
+      background-color: #333; /* Dark gray button background */
       padding: 1rem;
       border-radius: 8px;
       transition: background-color 0.3s ease;
       width: 4rem;
       text-align: center;
     }
-    .nav-icons .icon-btn:hover {
-      background-color: #fff;
+    .icon-btn:hover {
+      background-color: #555; /* Slightly lighter on hover */
     }
-    .nav-icons .icon-btn i {
+    .icon-btn i {
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
-    .nav-icons .icon-btn span {
-      font-size: 0.9rem;
+    .icon-btn span {
+      font-size: 0.85rem;
       font-weight: bold;
     }
 
-    /* ------------------------------
-       SECTION CONTENT
-    ------------------------------ */
+    /* SECTIONS (WHITE BACKGROUND, BLACK TEXT) */
     .section-content {
       display: none; /* Hidden by default, shown via JS */
+      background-color: #fff;
+      color: #000;
       padding: 2rem;
       max-width: 800px;
       margin: 0 auto;
@@ -102,29 +104,30 @@
       list-style-type: disc;
       margin-left: 2rem;
     }
+    .section-content a {
+      color: #0000ee; /* Standard link color on white background */
+      text-decoration: underline;
+    }
 
-    /* ------------------------------
-       FOOTER
-    ------------------------------ */
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #f9f9f9;
-      margin-top: 3rem;
+      background-color: #111; /* Darker background for footer */
+      color: #ccc; /* Light gray text */
     }
   </style>
 
   <script>
-    // JavaScript function to show a section and hide others
     function showSection(sectionId) {
       // Hide all sections
       const sections = document.querySelectorAll('.section-content');
-      sections.forEach(sec => {
-        sec.style.display = 'none';
+      sections.forEach(section => {
+        section.style.display = 'none';
       });
-      // Show the chosen section
+      // Show the clicked section
       document.getElementById(sectionId).style.display = 'block';
-      // Scroll to the top of the page (optional)
+      // Scroll to top (so section is visible immediately)
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
@@ -136,7 +139,7 @@
     <h1>ABDIRAHIM AHMED</h1>
     <p>Welcome to my page</p>
 
-    <!-- ICON-BASED NAVIGATION -->
+    <!-- ICON NAVIGATION -->
     <div class="nav-icons">
       <div class="icon-btn" onclick="showSection('about')">
         <i class="fas fa-user"></i>
@@ -211,8 +214,10 @@
   <div id="contact" class="section-content">
     <h2>Contact</h2>
     <p>I’d love to connect and explore new opportunities or collaborations.</p>
-    <p>Email: <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
-       Phone: (984) 269-8573</p>
+    <p>
+      Email: <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
+      Phone: (984) 269-8573
+    </p>
   </div>
 
   <footer>
