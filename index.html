@@ -5,25 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abdirahim Ahmed</title>
   <style>
-    /* Basic styling for a clean look */
+    /* Basic reset and fonts */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #333;
     }
+
+    /* Hero / Welcome Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh; /* Full viewport height for a bold look */
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Subtle gradient background */
+      text-align: center;
+      padding: 2em;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0.2em 0;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5em;
+    }
+
+    /* Navigation Bar inside the hero */
     nav {
-      background-color: #f0f0f0;
-      padding: 1em;
-      position: sticky;
-      top: 0;
+      display: flex;
+      gap: 1em;
     }
     nav a {
-      margin: 0 1em;
       text-decoration: none;
       color: #333;
+      background-color: #fff;
+      padding: 0.5em 1em;
+      border-radius: 4px;
       font-weight: bold;
+      transition: background-color 0.2s ease;
     }
+    nav a:hover {
+      background-color: #eee;
+    }
+
+    /* Section Styling */
     section {
       padding: 2em;
       max-width: 800px;
@@ -32,6 +63,8 @@
     h2 {
       margin-top: 0;
     }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 2em;
@@ -41,37 +74,48 @@
 </head>
 <body>
 
-  <!-- Navigation with anchor links -->
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Professional Experience</a>
-    <a href="#skills">Skills & Tools</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- Hero / Welcome Section -->
+  <div class="hero">
+    <h1>Abdirahim Ahmed</h1>
+    <p>Welcome to my page</p>
+    <!-- Navigation with anchor links -->
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#experience">Professional Experience</a>
+      <a href="#skills">Skills & Tools</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
-  <!-- About Section -->
+  <!-- About Me Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello, I’m <strong>Abdirahim Ahmed</strong>—a passionate Computer Engineering student at the
-      <a href="https://www.charlotte.edu" target="_blank">University of North Carolina at Charlotte</a>,
-      expecting to graduate in May 2025. I’m excited by the intersection of technology and engineering
-      and how innovative solutions can address real-world challenges.</p>
-    <p>My journey began with earning two associate degrees in Engineering and Science at Wake Technical
-       Community College, laying a strong foundation for my technical expertise. Outside of coursework
-       and lab projects, I enjoy exploring emerging tech trends, experimenting with new programming
-       languages, and engaging with local tech communities.</p>
+    <p>
+      Hello, I’m <strong>Abdirahim Ahmed</strong>—a passionate Computer Engineering student 
+      at the <a href="https://www.charlotte.edu" target="_blank">University of North Carolina at Charlotte</a>, 
+      graduating in May 2025. I’m excited by the intersection of technology and engineering 
+      and how innovative solutions can address real-world challenges.
+    </p>
+    <p>
+      My journey began with earning two associate degrees in Engineering and Science at 
+      Wake Technical Community College, laying a strong foundation for my technical expertise. 
+      When I’m not immersed in coursework or lab projects, I enjoy exploring emerging tech trends, 
+      experimenting with new programming languages, and engaging with local tech communities.
+    </p>
   </section>
 
   <!-- Professional Experience Section -->
   <section id="experience">
     <h2>Professional Experience & Achievements</h2>
-    <p><strong>Business Development Intern at USWYRE (May 2024 – August 2024)</strong><br>
-       - Promoted money transfer services at community events and guided users through app navigation.<br>
-       - Gathered user feedback, contributing to service expansion.
+    <p>
+      <strong>Business Development Intern at USWYRE (May 2024 – August 2024)</strong><br>
+      • Promoted money transfer services at community events and guided users through app navigation.<br>
+      • Gathered user feedback, contributing to service expansion.
     </p>
-    <p><strong>Support Technician at Dave & Busters (May 2022 – July 2022)</strong><br>
-       - Combined technical troubleshooting with customer service.<br>
-       - Maintained a high first-time resolution rate, boosting satisfaction.
+    <p>
+      <strong>Support Technician at Dave & Busters (May 2022 – July 2022)</strong><br>
+      • Combined technical troubleshooting with customer service.<br>
+      • Maintained a high first-time resolution rate, boosting satisfaction.
     </p>
   </section>
 
@@ -89,9 +133,12 @@
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>I’d love to connect and explore new opportunities or collaborations.</p>
-    <p>Email: <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
-       Phone: (984) 269-8573
+    <p>
+      I’d love to connect and explore new opportunities or collaborations.
+    </p>
+    <p>
+      Email: <a href="mailto:abdirahimahmed66@gmail.com">abdirahimahmed66@gmail.com</a><br>
+      Phone: (984) 269-8573
     </p>
   </section>
 
